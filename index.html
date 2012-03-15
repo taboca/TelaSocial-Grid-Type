@@ -1,1 +1,44 @@
-My GitHub Page
+<html>
+<head>
+
+<script src="vendor/jquery-min.js"></script>
+<script src="lib/grid.js"></script>
+<link media="screen, projection" type="text/css" href="lib/hdgrid.css" rel="stylesheet">
+<script>
+   $(document).ready(function () { 
+	var s = '.ab.ac.dc.fg'; 
+	try { 
+	 s  =  document.location.toString().split('?')[1];
+        } catch (devnull) { } 
+ 
+	grid(s); 
+/*
+ab
+ac
+dc
+fg
+*/
+   } );
+
+</script>
+<style>
+ 
+  .c { 
+ 	padding:10px;
+	margin:10px;
+	background-color:rgba(0,0,0,.5);
+	color:white;
+	font-size:160%;
+  } 
+
+</style>
+</head>
+<body>
+<div class='gnav'>
+  <div class='gnav' id='container'>
+
+  </div>
+</div>
+
+</body>
+</html>

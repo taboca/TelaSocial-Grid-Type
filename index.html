@@ -4,26 +4,18 @@
 <script src="vendor/jquery-min.js"></script>
 <script src="lib/grid.js"></script>
 <link media="screen, projection" type="text/css" href="lib/hdgrid.css" rel="stylesheet">
-<!--
-<script type="text/javascript" 
-src="https://getfirebug.com/firebug-lite.js">
-{
-    overrideConsole: false,
-    startInNewWindow: true,
-    startOpened: true,
-    enableTrace: true
-}
-</script>
--->
 <script>
    $(document).ready(function () { 
-	grid('.ab.ac.dc.fg'); 
-/*
-ab
-ac
-dc
-fg
-*/
+	var s = 'qwabacdcfgko'; 
+  	try { 	
+	var s = document.location.toString().split('?');
+	var l = s[1].split(',');
+	var cols = parseInt(l[0]);
+	var str  = l[1];
+	grid(str,cols) 
+	} catch(i) { 
+	   grid(s,2) 
+	} 
    } );
 
 </script>
@@ -34,14 +26,14 @@ fg
 	margin:10px;
 	background-color:rgba(0,0,0,.5);
 	color:white;
-	font-size:160%;
   } 
 
 </style>
 </head>
 <body>
-<div class='gnav gh1920'>
-  <div class='gnav gv1080' id='container'>
+<div class='gnav'>
+  <div class='gnav' id='container'>
+
   </div>
 </div>
 

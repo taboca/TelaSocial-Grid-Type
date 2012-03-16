@@ -6,18 +6,16 @@
 <link media="screen, projection" type="text/css" href="lib/hdgrid.css" rel="stylesheet">
 <script>
    $(document).ready(function () { 
-	var s = '.ab.ac.dc.fg'; 
-	try { 
-	 s  =  document.location.toString().split('?')[1];
-        } catch (devnull) { } 
- 
-	grid(s); 
-/*
-ab
-ac
-dc
-fg
-*/
+	var s = 'qwabacdcfgko'; 
+  	try { 	
+	var s = document.location.toString().split('?');
+	var l = s[1].split(',');
+	var cols = parseInt(l[0]);
+	var str  = l[1];
+	grid(str,cols) 
+	} catch(i) { 
+	   grid(s,2) 
+	} 
    } );
 
 </script>
@@ -28,7 +26,6 @@ fg
 	margin:10px;
 	background-color:rgba(0,0,0,.5);
 	color:white;
-	font-size:160%;
   } 
 
 </style>

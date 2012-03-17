@@ -5,16 +5,16 @@
 <script src="lib/grid.js"></script>
 <link media="screen, projection" type="text/css" href="lib/hdgrid.css" rel="stylesheet">
 <script>
+   var strdefault = 'qwabacdcfgko'; 
    $(document).ready(function () { 
-	var s = 'qwabacdcfgko'; 
   	try { 	
-	var s = document.location.toString().split('?');
-	var l = s[1].split(',');
-	var cols = parseInt(l[0]);
-	var str  = l[1];
-	grid(str,cols) 
+ 	    s = document.location.toString().split('?');
+ 	    var l = s[1].split(',');
+	    var cols = parseInt(l[0]);
+	    str  = l[1];
+	    grid(str,cols) 
 	} catch(i) { 
-	   grid(s,2) 
+	   grid(strdefault,2) 
 	} 
    } );
 

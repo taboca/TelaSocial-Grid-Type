@@ -2,7 +2,8 @@
 
 Check the sample grid.html. See the section: 
 
-    grid('.ab.ac.dc.fg'); 
+    grid('abacdcfg',2); 
+
 
 This means: 
 
@@ -11,6 +12,16 @@ This means:
     dc
     fg
  
+Or try: 
+
+    grid('aaadbccd',4)
+
+Live examples: 
+
+http://taboca.github.com/TelaSocial-Grid-Type/?4,aaadbccd
+http://taboca.github.com/TelaSocial-Grid-Type/?2,banana
+http://taboca.github.com/TelaSocial-Grid-Type/?4,aaadbccdzzzz
+
 ## LICENSE
 
 All files that are part of this project are covered by the following
@@ -28,7 +39,7 @@ license, except where explicitly noted.
     for the specific language governing rights and limitations under the
     License.
 
-    The Original Code is TelaSocial
+    The Original Code is TelaSocial - Marcio Galli
 
     The Initial Developer of the Original Code is the Marcio dos Santos Galli 
 
@@ -36,6 +47,7 @@ license, except where explicitly noted.
     the Initial Developer. All Rights Reserved.
 
     Contributor(s):
+      mgalli@telasocial.com
 
     Alternatively, the contents of this file may be used under the terms of
     either the GNU General Public License Version 2 or later (the "GPL"), or

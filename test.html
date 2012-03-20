@@ -1,0 +1,20 @@
+<html>
+<head>
+<script>
+	var ref = null;
+	function load() { 
+		a = document.createElement('a');
+		if(!ref) ref=document.body;
+		ref.appendChild(a);
+		ref = a;
+		load();
+	} 
+</script>
+<style>
+ a { float:left } 
+</style>
+</head>
+<body onload='load()'>
+</body>
+</html>
+

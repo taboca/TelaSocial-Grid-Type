@@ -45,8 +45,8 @@
 		var r = 150+parseInt(Math.random()*100);
 		var g = 150+parseInt(Math.random()*100);
 		var b = 150+parseInt(Math.random()*100);
-		for(var j=0;j<9;j++) { 
-			for(var i=0;i<16;i++) { 
+		for(var j=0;j<16;j++) { 
+			for(var i=0;i<9;i++) { 
 				if(i>=minI && i<=maxI) { 
 					if(j>=minJ && j<=maxJ) { 
 						document.getElementById("p"+i+"_"+j).style.backgroundColor="rgb("+r+","+g+","+b+")"
@@ -60,10 +60,10 @@
 
 	var mult = 40; 
 	function makeItems() { 
-		for(var j=0;j<9;j++) { 
+		for(var j=0;j<16;j++) { 
 			var row = document.createElement('div');
 			row.setAttribute('class','editRow');
-			for(var i=0;i<16;i++) { 
+			for(var i=0;i<9;i++) { 
 				var el = document.createElement('div');
 				el.setAttribute("id","p"+i+"_"+j);
 				el.setAttribute("class","editCell");

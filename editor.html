@@ -7,13 +7,13 @@
 <script>
    var el1 = null;
    var el2 = null;
+   var currChar = 'a';
    $(document).ready(function () { 
 	makeItems();	
 
 	$('#editor .editCell').mousedown(function (e) { 
 		e.stopPropagation();
 		e.preventDefault();
-
 		el1 = e.target.getAttribute('id');
 	});
 	$('#editor .editCell').mouseup(function (e) { 
@@ -22,17 +22,35 @@
 	});
    } );
 
+	var index = 0;
 	function makeElements(str1,str2) { 
+		var ref = currChar+index;
+		index++;
 		var minI = parseInt(str1.split("_")[0].split("p")[1]);
 		var minJ = parseInt(str1.split("_")[1]);
 		var maxI = parseInt(str2.split("_")[0].split("p")[1]);
 		var maxJ = parseInt(str2.split("_")[1]);
+		if(maxI<minI) { 
+			var temp = minI;
+			minI=maxI;
+			maxI=temp;
+		} 
+		if(maxJ<minJ) { 
+			var temp = minJ;
+			minJ=maxJ;
+			maxJ=temp;
+		} 
+	
+		var r = 150+parseInt(Math.random()*100);
+		var g = 150+parseInt(Math.random()*100);
+		var b = 150+parseInt(Math.random()*100);
 		for(var j=0;j<9;j++) { 
 			for(var i=0;i<16;i++) { 
 				if(i>=minI && i<=maxI) { 
 					if(j>=minJ && j<=maxJ) { 
-						document.getElementById("p"+i+"_"+j).style.backgroundColor='yellow';
-						document.getElementById("p"+i+"_"+j).innerHTML="a";
+						document.getElementById("p"+i+"_"+j).style.backgroundColor="rgb("+r+","+g+","+b+")"
+						document.getElementById("p"+i+"_"+j).innerHTML=ref;
+
 					} 
 				} 
 			} 

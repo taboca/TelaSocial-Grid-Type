@@ -1,0 +1,99 @@
+<html>
+<head>
+
+<script src="vendor/jquery-min.js"></script>
+<script src="lib/grid.js"></script>
+<link media="screen, projection" type="text/css" href="lib/hdgrid.css" rel="stylesheet">
+<script>
+   var el1 = null;
+   var el2 = null;
+   $(document).ready(function () { 
+	makeItems();	
+
+	$('#editor .editCell').mousedown(function (e) { 
+		e.stopPropagation();
+		e.preventDefault();
+
+		el1 = e.target.getAttribute('id');
+	});
+	$('#editor .editCell').mouseup(function (e) { 
+		el2 = e.target.getAttribute('id');
+	 	makeElements(el1,el2);
+	});
+   } );
+
+	function makeElements(str1,str2) { 
+		var minI = parseInt(str1.split("_")[0].split("p")[1]);
+		var minJ = parseInt(str1.split("_")[1]);
+		var maxI = parseInt(str2.split("_")[0].split("p")[1]);
+		var maxJ = parseInt(str2.split("_")[1]);
+		for(var j=0;j<9;j++) { 
+			for(var i=0;i<16;i++) { 
+				if(i>=minI && i<=maxI) { 
+					if(j>=minJ && j<=maxJ) { 
+						document.getElementById("p"+i+"_"+j).style.backgroundColor='yellow';
+						document.getElementById("p"+i+"_"+j).innerHTML="a";
+					} 
+				} 
+			} 
+		} 
+	} 
+
+	var mult = 40; 
+	function makeItems() { 
+		for(var j=0;j<9;j++) { 
+			var row = document.createElement('div');
+			row.setAttribute('class','editRow');
+			for(var i=0;i<16;i++) { 
+				var el = document.createElement('div');
+				el.setAttribute("id","p"+i+"_"+j);
+				el.setAttribute("class","editCell");
+				el.innerHTML='.';
+				row.appendChild(el);
+			} 
+			document.getElementById('editor').appendChild(row);
+		} 
+ 	} 
+</script>
+<style>
+
+  .editRow { 
+  } 
+
+  .editCell { 
+	background-color:rgb(200,200,200);
+        background-image: -moz-linear-gradient(to bottom right, rgba(0,0,0,.5), rgba(0,0,0,.3));
+	display:inline-block;
+	width:30px;
+	height:30px;
+	padding:5px;
+	margin:0; 
+   }  
+   .editCell * { margin:0; padding:0 } 
+  .c { 
+	background-color:rgba(0,0,0,.5);
+	color:white;
+  } 
+
+  .c .inner { 
+        background-image: -moz-linear-gradient(to bottom right, red, black);
+	height:100%;
+	width:100%;
+  } 
+
+</style>
+</head>
+<body>
+
+<div id='editor' style='width:640px;height:360px'>
+
+</div>
+
+<div class='gnav'>
+  <div class='gnav' id='container'>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -2,21 +2,15 @@
 
 Check the sample grid.html. See the section: 
 
-    grid('abac',2); 
+    grid('.ab.ac.dc.fg'); 
 
 This means: 
 
     ab
     ac
+    dc
+    fg
  
-Or 
-
-    +---+---+
-    | a | b | 
-    |   +---+
-    |   | c | 
-    +---+---+ 
-
 ## LICENSE
 
 All files that are part of this project are covered by the following

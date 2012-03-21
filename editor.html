@@ -8,6 +8,9 @@
    var el1 = null;
    var el2 = null;
    var currChar = 'a';
+   var options = 'qwertyuiopasdfghjklzxcvbnm';
+   var spec = new Array();
+
    $(document).ready(function () { 
 	makeItems();	
 
@@ -23,9 +26,17 @@
 	
    } );
 
+ 	function make() { 
+		var buff=''; 
+		for(var k in spec ) { 
+			buff += spec[k];
+		} 
+alert(buff);
+		grid(buff,9,'container');
+ 	} 
 	var index = 0;
 	function makeElements(str1,str2) { 
-		var ref = currChar+index;
+		var ref = options[index];
 		index++;
 		var minI = parseInt(str1.split("_")[0].split("p")[1]);
 		var minJ = parseInt(str1.split("_")[1]);
@@ -51,6 +62,7 @@
 					if(j>=minJ && j<=maxJ) { 
 						document.getElementById("p"+i+"_"+j).style.backgroundColor="rgb("+r+","+g+","+b+")"
 						document.getElementById("p"+i+"_"+j).innerHTML=ref;
+						spec[j*9+i]=ref;
 
 					} 
 				} 
@@ -101,18 +113,18 @@
 	width:100%;
   } 
 
+  
+
 </style>
 </head>
 <body>
 
-<div id='editor' style='width:640px;height:360px'>
+<button onclick='make()'>Gen</button>
+<div id='editor' style='width:360px;height:640px;display:inline-block;margin:1em'>
 
 </div>
+<div id='container' style='display:inline-block'>
 
-<div class='gnav'>
-  <div class='gnav' id='container'>
-
-  </div>
 </div>
 
 </body>

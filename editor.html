@@ -33,6 +33,7 @@
 		} 
 alert(buff);
 		grid(buff,9,'container');
+document.getElementById('output').value=(document.getElementById('container').innerHTML);
  	} 
 	var index = 0;
 	function makeElements(str1,str2) { 
@@ -126,9 +127,12 @@ Regras: você tem que preencher tudo, com o mouse ( down e arrasta solta ). Vc s
 <div id='editor' style='width:360px;height:640px;display:inline-block;margin:1em'>
 
 </div>
-<div id='container' style='display:inline-block'>
-
+<h1>Live</h1>
+<div id='container' >
 </div>
+<h1>Gerado</h1>
+<textarea id='output' rows='40' cols='80'>
+</textarea>
 
 </body>
 </html>
